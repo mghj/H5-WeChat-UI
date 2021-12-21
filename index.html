@@ -1,0 +1,248 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+*{ margin:0; padding:0; font-family:Arial, Helvetica, sans-serif;background-repeat:no-repeat;}
+body{ background-color:#D6D6D6;}
+.box{ width:980px; background-color:#F3F3F3; border-radius:6px; border:solid 1px #CCCCCC; margin:60px auto; overflow:hidden;}
+
+/*menubar*/
+.menubar{ width:70px; height:710px; background-color:#191818;float:left;} 
+.control{ width:50px; margin:10px;float:left;}
+.menubar .close{ width:12px; height:12px; background-color:red; border-radius:50%; float:left;}
+.menubar .mini{ width:12px; height:12px; background-color:yellow; border-radius:50%; float:left; margin:0 7px;}
+.menubar .max{ width:12px; height:12px; background-color:green; border-radius:50%; float:left;}
+.menu{margin:53px 13px; float:left;}
+.menu .userimg{ width:44px; height:44px; background-image:url(images/img1.png); background-size:44px; border-radius:3px;}
+.menu .info{height:44px; background-image:url(images/ic1.png); background-position: center center; margin-top: 30px;}
+.menu .friend{width:30px; height:30px; background-image: url(images/ic2.png); margin:20px auto;}
+.menu .fav{width:30px; height:30px; background-image: url(images/ic3.png); margin:30px auto;}
+.menu .phone{width:30px; height:30px; background-image: url(images/ic4.png); margin:0 auto; margin-top:290px;}
+.menu .set{width:30px; height:30px; background-image: url(images/ic5.png); margin:0 auto; margin-top:30px;}
+.menu .amount{width:16px; line-height:16px; background-color: red; border-radius: 50%; color: #fff; text-align: center; font-size: 12px; float: right; }
+
+
+/*infolist*/
+.infolist{ width:260px; height:710px; background-color:#FBFBFB; float:left;}
+.infolist .emoji{ width:16px; height:16px;}
+.infolist dt{ width:236px; background-image:url(images/ic6_2.png); background-position:right; margin:0 auto;}
+.infolist .search{ width:200px; height:22px; background-color:#eee; border-radius:3px; border:solid 1px #DFDFDF; background-image:url(images/ic6_1.png); margin:19px 0;} 
+.infolist p{line-height:22px; font-size:12px; color:#B9B9C8; margin-left:24px;}
+.infolist dd{ width:248px; height:70px; border-bottom:solid 1px #EFEFEF; margin-left:12px;}
+.infolist .reddot{width: 8px; height: 8px; background-color: red; border-radius: 50%; position:absolute; margin: 9px 0 0 40px;}
+
+.pica div,.picb div,.picc div,.picd div,.pice div,.picf div,.picg div,.pich div,.pici div{ float:left;}
+.infolist .textbox{ width:180px; height:44px; margin:13px 12px 13px 56px; line-height:22px;}
+.infolist .textbox1{ width:180px; height:44px; margin:13px 0 13px 12px; line-height:22px; }
+.infolist .text1{ width:140px; font-size:14px; font-weight:bold;}
+.infolist .text2{ width:40px; font-size:10px; color:#9E9E9E; text-align:right;}
+.infolist .text3{width:180px; font-size:12px; color:#9E9E9E; line-height:22px;}
+
+.infolist .pica{ background-image:url(images/ic7.png); background-position:left center;}
+.infolist .picb{ background-image: url(images/img10.png); background-position:left center;}
+.infolist .picc{width:260px; background-color:#D6D6D6;margin:0 auto;}
+/*.infolist .picd{width:240px; margin:0 auto;}*/
+.infolist .picduser,.infolist .piceuser,.infolist .picfuser,.infolist .picguser,.infolist .pichuser,.infolist .piciuser{ width:44px; height:44px; background-size:44px; margin:13px 0; border-radius:3px;}
+.infolist .picduser{background-image: url(images/img2.png);}
+.infolist .piceuser{background-image: url(images/img3.png);}
+.infolist .picfuser{background-image: url(images/img4.png); border-radius:50%;}
+.infolist .picguser{background-image: url(images/img5.png);}
+.infolist .pichuser{background-image: url(images/img6.png);}
+.infolist .piciuser{background-image: url(images/img7.png);}
+.infolist .amount2{width:16px; line-height:16px; background-color: red; border-radius: 50%; color: #fff; text-align: center; font-size: 12px; position:absolute; margin: 6px 0 0 35px;}
+
+
+.infolist .group{ width:38px; height:38px;background-color:#eee; margin:13px 0 13px 12px; padding:3px; float:left; border-radius:3px;}
+.infolist .group .user1{ width:18px; height:18px; background-image:url(images/img8_1.png); background-size:18px; }
+.infolist .group .user2{ width:18px; height:18px; background-image: url(images/img8_3.png); background-size:18px; margin:0 0 2px 2px;}
+.infolist .group .user3{ width:18px; height:18px; background-image: url(images/img8_4.png); background-size:18px; margin-right:2px; }
+.infolist .group .user4{ width:18px; height:18px; background-image: url(images/img1.png); background-size:18px;}
+.infolist .textbox2{ width:180px; height:44px; margin:13px 0 13px 12px; line-height:22px; }
+.infolist .pici .emoji2{ height:22px; background-image:url(images/emoji_fire.png); background-size:14px; background-position:20px;}
+/* .infolist .pici .emoji2{ height:22px; background-image:url(images/emoji_heavy.png); background-size:14px; background-position:60px;} */
+
+/*infowindow*/
+.infowindow{ width:650px; height:710px; float:left}
+.infowindow .title{line-height:60px; background-color:#F5F5F5; border-bottom:solid 1px #DDDDDD;}
+.infowindow .titlename{width:610px; font-size:18px; font-weight:bold; margin:0 auto; background-image:url(images/ic8.png); background-position:right center;}
+.infowindow .inforec{width:610px; margin:0 auto;}
+.infowindow .time{ font-size:12px; color:#9E9E9E; text-align:center; margin-top:30px;}
+
+.infowindow .info1{overflow:hidden; margin-top:30px; float:left;}
+.infowindow .userpho1{ width:30px; height:30px; background-image:url(images/img8_1.png); background-size:30px; border-radius:3px; float:left;}
+.infowindow .username1{width:530px; font-size:12px; color:#9E9E9E; float:left; margin-left:10px;}
+.infowindow .userinfo1{ width:200px; line-height:36px; font-size:14px; background-image: url(images/img11.png); text-indent:15px; float:left; margin:5px 0 0 10px;}
+
+.infowindow .info2{overflow:hidden; margin-top:30px; float: right;}
+.infowindow .userpho2{ width:30px; height:30px; background-image: url(images/img1.png); background-size:30px; border-radius:3px; float:left;}
+.infowindow .userinfo2{ width:100px; line-height:36px; font-size:14px; background-image: url(images/img12.png); text-indent:10px; float:left; margin-right:10px;}
+
+.infowindow .info3{overflow:hidden; margin-top:30px; float:left;}
+.infowindow .userpho3{ width:30px; height:30px; background-image: url(images/img8_4.png); background-size:30px; border-radius:3px; float:left;}
+.infowindow .username3{ width:530px; font-size:12px; color:#9E9E9E; float:left; margin-left:10px;}
+.infowindow .userinfo3{ width:200px; height:70px; background-image: url(images/img13.png); float:left; margin:5px 0 0 10px;}
+.infowindow .infotext{width:110px; height:50px; margin:10px 5px 10px 15px; float:left;}
+.infowindow .infotext1{ height:40px; font-size:14px; line-height:16px;}
+.infowindow .infotext2{ line-height:10px; font-size:12px; color:#999;}
+.infowindow .fileico{ width:50px; height:50px; background-image:url(images/img14.png); float:left; margin:10px;}
+
+.infowindow .info4{ width:160px; overflow:hidden; margin-top:30px; float: right;}
+.infowindow .userpho4{ width:30px; height:30px; background-image: url(images/img1.png); background-size:30px; border-radius:3px; float:left;}
+.infowindow .userinfo4{ width:120px; height:120px; background-image: url(images/img9.gif); background-size:120px; float:left; margin-right:10px;}
+
+.infowindow .info5{overflow:hidden; margin-top:30px; float:left;}
+.infowindow .userpho5{ width:30px; height:30px; background-image: url(images/img8_3.png); background-size:30px; border-radius:3px; float:left;}
+.infowindow .username5{ width:530px; font-size:12px; color:#9E9E9E; float:left; margin-left:10px;}
+.infowindow .userinfo5{ width:100px; line-height:36px; font-size:14px; background-image: url(images/img11.png); text-indent:10px; float:left; margin:5px 0 0 10px;}
+.infowindow .fileico2{ width:22px; height:22px; background-image: url(images/emoji_volcano.png); background-size:18px; float:left; margin:7px 0 7px 15px;}
+
+</style>
+</head>
+
+<body>
+<div class="box">
+	<div class="menubar">
+    	<div class="control">
+        	<div class="close"></div>
+            <div class="mini"></div>
+            <div class="max"></div>
+        </div>
+        <dl class="menu">
+        	<dt class="userimg"></dt>
+            <dd class="info"><div class="amount">1</div></dd>
+            <dd class="friend"></dd>
+            <dd class="fav"></dd>
+            <dd class="phone"></dd>
+            <dd class="set"></dd>
+        </dl>
+    </div>
+    
+    <dl class="infolist">
+	    <dt>
+        	<div class="search"><p>搜索</p></div>
+        </dt>
+        <!-- <div class="reddot"></div> -->
+        <dd class="pica">
+            <div class="reddot"></div>
+        	<div class="textbox">
+                <div class="text1">公众号</div>
+                <div class="text2">08:08</div>
+                <div class="text3">应谋鬼计:[链接]UI设计在工作中…</div>
+			</div>
+        </dd>
+		<dd class="picb">
+        	<div class="textbox">
+                <div class="text1">中国移动和粉俱乐部</div>
+                <div class="text2">09:48</div>
+                <div class="text3">[链接]剪纸贺新年❗❗10GB流…</div>
+			</div>
+        </dd>
+		<dd class="picc">
+            <div class="group">
+            	<div class="user1"></div>
+                <div class="user2"></div>
+                <div class="user3"></div>
+                <div class="user4"></div>
+            </div>
+        	<div class="textbox1">
+                <div class="text1">技术交流群</div>
+                <div class="text2">12:01</div>
+                <div class="text3">仰望星空:&nbsp;&nbsp;<img class="emoji" src="images/emoji_volcano.png">&nbsp;&nbsp;~赫赫~</div>
+			</div>          
+        </dd>
+        <dd class="picd">
+            <div class="amount2">2</div>
+            <div class="picduser"></div>
+        	<div class="textbox1">
+                <div class="text1">『岁月忽已暮』</div>
+                <div class="text2">20/01/21</div>
+                <div class="text3">道听途说</div>
+			</div>
+        </dd>
+		<dd class="pice">       
+        <div class="piceuser"></div>
+        	<div class="textbox1">
+                <div class="text1">花自飘零水自流</div>
+                <div class="text2">20/01/20</div>
+                <div class="text3">百里盛世换你一片阑珊</div>
+			</div>
+        </dd>
+        <dd class="picf">
+        <div class="picfuser"></div>
+        	<div class="textbox1">
+                <div class="text1">♋双子摩天輪</div>
+                <div class="text2">20/01/19</div>
+                <div class="text3">以云为纸</div>
+			</div>
+        </dd>
+		<dd class="picg">
+        <div class="picguser"></div>
+        	<div class="textbox1">
+                <div class="text1">流水落花春去也☠</div>
+                <div class="text2">20/01/18</div>
+                <div class="text3">情到深处难自禁つ柔肠百转冷如…</div>
+			</div>
+        </dd>
+        <dd class="pich">
+        <div class="pichuser"></div>
+        	<div class="textbox1">
+                <div class="text1">独听寒山夜半钟</div>
+                <div class="text2">20/01/17</div>
+                <div class="text3">深夜忽梦少年事</div>
+			</div>
+        </dd>
+		<dd class="pici">
+        <div class="piciuser"></div>
+        	<div class="textbox2">
+                <div class="text1">无人街角</div>
+                <div class="text2">20/01/17</div>
+                <div class="text3 emoji2">🚳<div class="emoji3"></div></div>
+			</div>
+        </dd>
+    </dl>
+    
+    <div class="infowindow">
+    	<div class="title">
+        	<div class="titlename">技术交流群(4)</div>
+        </div>
+        <div class="inforec">
+        	<div class="time">10:54</div>
+            
+            <div class="info1">
+            	<div class="userpho1"></div>
+            	<div class="username1">萤火照君眠</div>
+                <div class="userinfo1">新年快乐 🎉</div>
+            </div>
+            <div class="info2">
+                <div class="userinfo2">😬新年快乐</div>
+                <div class="userpho2"></div>
+            </div>
+             <div class="info3">
+            	<div class="userpho3"></div>
+            	<div class="username3">无恙</div>
+                <div class="userinfo3">
+                	<div class="infotext">
+                    	<div class="infotext1">新年福利-武林秘籍！.pdf</div>
+                    	<div class="infotext2">998 KB</div>
+                    </div>
+                    <div class="fileico"></div>
+                </div>
+            </div>
+            <div class="info4">
+                <div class="userinfo4"></div>
+                <div class="userpho4"></div>
+            </div>
+            <div class="info5">
+            	<div class="userpho5"></div>
+            	<div class="username5">仰望星空</div>
+                <div class="userinfo5">~赫赫~
+                	<div class="fileico2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
